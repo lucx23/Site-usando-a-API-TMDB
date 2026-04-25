@@ -1,0 +1,26 @@
+<div class="resultados-pesquisa">
+    <div class="header-pesquisa">
+        <h1>Resultados da Pesquisa</h1>
+        <%- include('../partials/pesquisa-filmes') %>
+    </div>
+
+    <div>
+        <% if (query === '') { %>
+            <p>Nenhum filme encontrado para "<%= query %>". Tente novamente com outro título.</p>
+            <% } else { %>
+                <ul class="filmes">
+                    <% filmes.forEach(filme=> { %>
+                        <li class="filme">
+                            <a href="/filmes/<%= filme.id %>">
+                                <img src="https://image.tmdb.org/t/p/w200<%= filme.poster_path %>"
+                                    alt="<%= filme.title %>">
+                                <h3>
+                                    <%= filme.title %>
+                                </h3>
+                            </a>
+                        </li>
+                        <% }); %>
+                </ul>
+                <% } %>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="paginacao">
+    <% 
+        let inicio = Math.max(1, paginaAtual - 4);
+        let fim = Math.min(totalPaginas, paginaAtual + 4);
+    %>
+
+    <% for(let i = inicio; i <= fim; i++) { %>
+        <a href="/filmes/filmes-populares?page=<%= i %>" 
+           class="<%= i === paginaAtual ? 'ativo' : '' %>">
+            <%= i %>
+        </a>
+    <% } %>
+</div>

@@ -1,0 +1,31 @@
+<div class="filmes">
+    <div class="header-filmes">
+        <h2>Filmes Populares</h2>
+        <%- include('../partials/pesquisa-filmes') %>
+    </div>
+
+    <ul class="filmes">
+        <% filmes.forEach(filme=> { %>
+            <li class="filme">
+                <a href="/filmes/<%= filme.id %>">
+                    <img src="https://image.tmdb.org/t/p/w200<%= filme.poster_path %>" alt="<%= filme.title %>">
+                    <h3>
+                        <%= filme.title %>
+                    </h3>
+                </a>
+            </li>
+            <% }); %>
+    </ul>
+    <% if (error) { %>
+        <p>
+            <%= error %>
+        </p>
+        <% } %>
+
+            <% if (!filmes.length) { %>
+                <p>Nenhum filme encontrado no momento.</p>
+                <% } else { %>
+                    <% } %>
+
+    <%- include('../partials/paginas', { paginaAtual, totalPaginas }) %>
+</div>

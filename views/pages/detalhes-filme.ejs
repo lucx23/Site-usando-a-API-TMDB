@@ -1,0 +1,27 @@
+<% detalhes.forEach(filme=> { %>
+    <div class="detalhes-filme">
+        <a href="/filmes/filmes-populares">Voltar</a>
+        <div class="lados">
+            <div class="lado-esq">
+                <img src="https://image.tmdb.org/t/p/w300<%= filme.poster_path %>" alt="<%= filme.title %>">
+            </div>
+            
+            <div class="lado-dir">
+                <h2>
+                    <%= filme.title %>
+                </h2>
+                <p><strong>Data de Lançamento:</strong> <%= filme.release_date %></p>
+                <p><strong>Gênero:</strong> 
+                    <% filme.genres.forEach((genre, index) => { %>
+                        <%= genre.name %><%= index < filme.genres.length - 1 ? ', ' : '' %>
+                    <% }); %>
+                </p>
+                <% if (filme.overview) { %>
+                    <p><strong>Sinopse:</strong> <%= filme.overview %></p>
+                <% } else { %>
+                    <p><strong>Sinopse:</strong> Sinopse não disponível.</p>
+                <% } %>
+            </div>
+        </div>
+    </div>
+<% }); %>
