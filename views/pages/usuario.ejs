@@ -1,0 +1,10 @@
+<div class="usuario">
+    <h1>Seja bem-vindo, <%= usuario.nome %>!</h1>
+
+    <p>Email: <%= usuario.email %></p>
+    <p>Data de cadastro: <%= usuario.createdAt.toLocaleDateString() %></p>
+
+    <div class="deletar-editar">
+        <p><a href="/usuarios/<%= usuario.id %>/deletar" class="deletar-perfil">Deletar perfil</a></p>
+    </div>
+</div>

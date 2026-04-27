@@ -1,0 +1,17 @@
+<div class="login">
+    <form action="/usuarios/login" method="POST">
+        <h1>Login</h1>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required>
+
+        <button type="submit">Entrar</button>
+        <% if (message) { %>
+            <p style="text-align: center;"><%= message %></p>
+        <% } %>
+        <p style="text-align: center;">Não tem uma conta? <a href="/usuarios/cadastrar">Crie aqui</a></p>
+    </form>
+
+</div>

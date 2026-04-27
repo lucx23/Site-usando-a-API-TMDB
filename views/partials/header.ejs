@@ -6,8 +6,21 @@
     <nav>
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/filmes/filmes-populares">Filmes Populares</a></li>
+            <li><a href="<%= usuarioLogado ? '/filmes/filmes-populares' : '/usuarios/login' %>">Filmes Populares</a></li>
             <li><a href="/sobre">Sobre</a></li>
+
         </ul>
+        
+        <% if(!usuarioLogado) { %>
+            <ul class="login-cadastro">
+                <li><a href="/usuarios/login" id="login">Login</a></li>
+                <li><a href="/usuarios/cadastrar" id="cadastro">Cadastrar</a></li>
+            </ul>
+        <% } else { %>
+            <ul class="user-actions">
+                <li><a href="/usuarios/perfil/<%= usuarioLogado.id %>">Meu perfil</a></li>
+                <li><a href="/usuarios/logout" id="logout">Sair</a></li>
+            </ul>
+        <% } %>
     </nav>
 </header>
