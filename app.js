@@ -18,6 +18,7 @@ app.use(expressSession({
     }
 }))
 
+
 app.use((req, res, next) => {
     res.locals.usuarioLogado = req.session.user || null;
     next();
