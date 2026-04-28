@@ -72,7 +72,7 @@ app.use(express.json());
 app.use(session({
     key: 'session_cookie',
     secret: process.env.SECRET_SITE,
-    store: sessionStore, // 🔥 AQUI ESTÁ A MUDANÇA
+    store: sessionStore,
     resave: false,
     saveUninitialized: false,
     cookie: {
